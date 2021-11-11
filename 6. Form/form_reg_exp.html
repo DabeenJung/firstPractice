@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        phone number: <input type="text" id="phone">
+        <input type="button" 
+        onclick = "checkNumeric(document.getElementById('phone'), 'Enter only number!')" value="check">
+    </form>  
+
+    <script>
+        function checkNumeric(elem, msg) {
+            var exp = /^[0-9]+$/;
+            if (elem.value.match(exp)) {
+                return true;
+            } else {
+                alert(msg);
+                elem.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

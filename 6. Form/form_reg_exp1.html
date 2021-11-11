@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        Choose a fruit <select id="fruits" class="required">
+            <option value="0">choose</option>
+            <option value="1">apple</option>
+            <option value="2">pear</option>
+            <option value="3">banana</option>
+        </select>
+        <input type="button" onclick="checkSelection(document.getElementById('fruits'),
+        'You must choose one')" value="CHECK">
+    </form>
+    <script>
+        function checkSelection(elem, msg) {
+            if (elem.value == 0) {
+                alert(msg);
+                elem.focus()
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

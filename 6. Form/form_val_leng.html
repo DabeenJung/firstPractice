@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        name(6-8 characters) : <input type="text" id="name">
+        <input type="button" value="check" onclick="checkLength(document.getElementById('name'), 6, 8)">
+    </form>
+    <script>
+        function checkLength(elem, min, max) {
+            var s = elem.value;
+            if (s.length >= min && s.length <= max) {
+                return true;
+            } else {
+                alert("please reenter between " + min + " and " + max);
+                elem.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
