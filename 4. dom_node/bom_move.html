@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="openWindow()" value="create window"> <br>
+    <br>
+    <input type="button" onclick="moveWindow()" value="move window">
+
+    <script>
+        var w;
+        function openWindow() {
+            w = window.open(" ", " ", "width=150, height=150");
+            w.document.write("<p>Today's for sale</p>");
+            w.moveTo(100,100);
+        }
+        function moveWindow() {
+            w.moveBy(20, 20);
+            w.focus();
+        }
+    </script>
+</body>
+</html>

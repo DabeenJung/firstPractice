@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body onload="changeColor();">
+    <div class="boxes">
+        <p>warning will be alerted after 3 seconds you clicked the button </p>
+        <button onclick="showAlert()">click!</button>
+
+        <script>
+            function showAlert() {
+                setTimeout(function () {
+                    alert("used setTimeout()")
+                }, 3000)
+            }
+        </script>
+    </div>
+
+    <div class="boxes">
+        <div id="target">
+            <p>This is a text.</p>
+        </div>
+        <button onclick="stopTextColor()">STOP</button>
+
+        <script>
+            var id;
+            function changeColor() {
+                id = setInterval(flashText, 500);
+            }
+            function flashText() {
+                var elem = document.getElementById("target");
+                elem.style.color = (elem.style.color == "red") ? "blue" : "red";
+                elem.style.backgroundColor = (elem.style.backgroundColor =="green") ? "yellow" : "green";
+            }
+            function stopTextColor() {
+                clearInterval(id);
+            }
+        </script>
+    </div>
+</body>
+</html>
